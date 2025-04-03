@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIB – Project Page</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+	<link href="fontawesome-6.6.0/css/all.css" rel="stylesheet">
+    <style>
+		.btn {
+		    padding: 7px 15px;
+			font-size: 20px;
+		}
+		
+		mark {
+			-webkit-animation: 3s highlight 1.5s 1 normal forwards;
+			animation: 3s highlight 1.5s 1 normal forwards;
+			background-color: none;
+			background: linear-gradient(90deg, #f7f5bc 50%, rgba(255, 255, 255, 0) 50%);
+			background-size: 200% 100%;
+			background-position: 100% 0;
+		}
+		
+		@-webkit-keyframes highlight {
+		  to {
+			background-position: 0 0;
+		  }
+		}
+
+		@keyframes highlight {
+		  to {
+			background-position: 0 0;
+		  }
+		}
+		
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        header {
+            background-color: #6aa2bb;
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+		
+		figure {
+		  text-align: center; /* Centers the content inside the figure */
+		  margin: 20px auto; /* Adds vertical space and centers the figure horizontally */
+		}
+		
+		figcaption {
+		  padding-top: 10px;
+		  color: #555;
+		  font-style: italic; /* Styling for the caption */
+		}
+
+<!--         header h1 {
+			margin: 0;
+			font-size: 60px;
+			padding-bottom: 30px;
+			padding-top: 20px;
+			padding-left: 20px;
+			padding-right: 20px;
+        } -->
+		
+		header h1 {
+            margin: 0;
+            font-size: 100px;
+			padding-bottom: 40px;
+        }
+
+        header h2 {
+            margin: 10px 0 0;
+            font-weight: 400;
+        }
+		
+		header address a {
+			font-size: 20px;
+			color: #4a5685;
+		}
+		
+		header address {
+			color: #337ab7
+		}
+		
+		header address institute {
+			color: #000000;
+			font-size: 20px;
+		}
+		
+		header address sup {
+			color: #000000;
+		}
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px auto;
+        }
+		
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h2 {
+            font-size: 28px;
+            border-left: 5px solid #4a9aac;
+            padding-left: 10px;
+            color: #333;
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-top: 10px;
+        }
+		
+		        @media (max-width: 768px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            header address a {
+                font-size: 16px;
+            }
+
+            .container {
+                width: 100%;
+                padding: 0 15px;
+            }
+
+            .figure-container figure {
+                flex: 1 1 100%;
+            }
+
+            .key-contributions, .methodology, .definitions {
+                padding: 15px;
+            }
+
+            section h2 {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            header address a {
+                font-size: 14px;
+            }
+
+            .key-contributions, .methodology, .definitions {
+                padding: 10px;
+            }
+
+            section p {
+                font-size: 14px;
+            }
+        }
+		
+		/* On larger screens (e.g., tablets, desktops) */
+		@media (min-width: 768px) {
+			img.float-figure {
+				float: right;
+				margin-left: 20px;
+				margin-right: 0;
+				width: 30%; /* Adjust based on your layout */
+			}
+		}
+
+		/* On smaller screens (e.g., phones), reset to inline */
+		@media (max-width: 767px) {
+			img.float-figure {
+				float: none;
+				margin-left: auto;
+				margin-right: auto;
+				width: 100%; /* Full width inline */
+			}
+		}
+		
+		.figure-container {
+		  display: grid;
+		  grid-template-columns: 1fr 1fr; /* Creates two columns of equal width */
+		  gap: 20px; /* Space between columns */
+		}
+		
+		.subtitle {
+		    font-size: 28px;
+            border-left: 5px solid #4a9aac;
+            padding-left: 10px;
+            color: #333;
+		}
+
+        .key-contributions, .methodology {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+			font-size: 18px;
+        }
+		
+		.definitions {
+            background-color: #ededed;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+			font-size: 18px;
+        }
+
+        .key-contributions h3, .methodology h3 .definitions h3 {
+            font-size: 24px;
+            color: #444;
+        }
+
+        .key-contributions ul, .methodology ul .definitions ul {
+            margin-left: 0px;
+			font-size: 18px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 5px 0;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 16px;
+        }
+		.card {
+			position: relative;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-webkit-flex-direction: column;
+			-ms-flex-direction: column;
+			flex-direction: column;
+			background-color: #fff;
+			border: 1px solid rgba(0, 0, 0, .125);
+			border-radius: .25rem;
+		.card-header {
+			padding: .75rem 1.25rem;
+			margin-bottom: 0;
+			margin-top: 0;
+			background-color: #f7f7f9;
+			border-bottom: 1px solid rgba(0, 0, 0, .125);
+			}
+		.card-block {
+			-webkit-box-flex: 1;
+			-webkit-flex: 1 1 auto;
+			-ms-flex: 1 1 auto;
+			flex: 1 1 auto;
+			padding: 1.25rem;
+		}
+		.img-inline {
+		  vertical-align: middle;
+		  max-width: 100%;
+		  height: auto;
+		}
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>MIB: A Mechanistic Interpretability Benchmark</h1>
+	<address>
+	<a href="https://aaronmueller.github.io/" target="_blank">Aaron Mueller</a>,
+	<a href="https://atticusg.github.io/" target="_blank">Atticus Geiger</a>,
+	<a href="https://sarahwie.github.io/" target="_blank">Sarah Wiegreffe</a>,
+	<a href="https://il.linkedin.com/in/dana-arad" target="_blank">Dana Arad</a>,
+	<a href="https://iarcuschin.com/" target="_blank">Iván Arcuschin</a>,
+	<a href="https://x.com/adambelfki" target="_blank">Adam Belfki</a>,
+	<a href="https://yiksiu-chan.github.io/" target="_blank">Yik Siu Chan</a>,
+	<a href="https://github.com/JadenFiotto-Kaufman" target="_blank">Jaden Fiotto-Kaufman</a>,<br>
+	<a href="https://x.com/tal_haklay" target="_blank">Tal Haklay</a>,
+	<a href="https://hannamw.github.io/" target="_blank">Michael Hanna</a>,
+	<a href="https://scholar.google.com/citations?hl=en&user=zM_wp_MAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Jing Huang</a>,
+	<a href="" target="_blank">Rohan Gupta</a>,
+	<a href="https://yaniv.nikankin.com/" target="_blank">Yaniv Nikankin</a>,
+	<a href="https://orgadhadas.github.io/" target="_blank">Hadas Orgad</a>,
+	<a href="https://nix07.github.io/" target="_blank">Nikhil Prakash</a>,
+	<a href="https://scholar.google.com/citations?hl=en&user=5QW4VNgAAAAJ" target="_blank">Anja Reusch</a>,<br>
+	<a href="https://x.com/arunasank?lang=en" target="_blank">Aruna Sankaranarayanan</a>,
+	<a href="https://x.com/shunshao6" target="_blank">Shun Shao</a>,
+	<a href="https://alestolfo.github.io/" target="_blank">Alessandro Stolfo</a>,
+	<a href="https://mttk.github.io/" target="_blank">Martin Tutek</a>,
+	<a href="https://amirzur.github.io/" target="_blank">Amir Zur</a>,
+	<a href="https://baulab.info/" target="_blank">David Bau</a>,
+	<a href="https://belinkov.com/" target="_blank">Yonatan Belinkov</a>,
+	 <br>
+	</address>
+	<a href="https://arxiv.org/abs/2410.02707" target="_blank" class="btn" style="color: #fff; background-color: #198754; border-color: #136e44;"><i class="ai ai-arxiv"></i> ArXiv</a>
+    <a href="https://orgadhadas.github.io/publications/llms_know/paper.pdf" target="_blank" class="btn" style="color: #fff; background-color: #dc3545; border-color: #b72d3a;"><i class="far fa-file-pdf"></i> PDF</a>
+    <a href="https://github.com/technion-cs-nlp/LLMsKnow" target="_blank" class="btn" style="color: #fff; background-color: #212529; border-color: #212529;"><i class="fab fa-github"></i> Code</a>
+</header>
+
+
+<div class="container">
+
+	<figure style="padding-top: 50px; padding-bottom:100px">
+		<img src="img/mib_logo.png" class="img-inline" height="300px">
+	</figure>
+
+	<h2 class="subtitle">Abstract</h2>
+    <section>
+        <p>
+Progress in mechanistic interpretability has been rapid, but there exist few standards for comparing methods. How can we know whether new methods achieve real improvements? In pursuit of meaningful and lasting evaluation standards, we propose MIB, a Mechanistic Interpretability Benchmark with two tracks spanning four tasks and five models. <mark>MIB favors methods that precisely and concisely recover relevant causal pathways or specific causal variables in neural language models.</mark> The circuit localization track compares methods that locate the model components—and connections between themmost important for performing a task (e.g., attribution patching or information flow routes). pares methods that featurize a hidden vector (e.g., sparse autoencoders or distributed alignment search) and locate mediators of a causal variable relevant to the task. Using MIB, we find that attribution and mask optimization methods perform best on circuit localization. We also find that supervised methods for causal variable localization outperform unsupervised methods, and both outperform the simplest baseline. These findings illustrate that MIB enables meaningful comparisons of MI methods, and increases our confidence that there has been real progress in the field.
+        </p>
+    </section>
+
+	<h2 class="subtitle">Key Contributions</h2>
+    <section class="key-contributions">
+        <ul>
+		<li><strong>Placeholder 1:</strong> XXX</li>
+		<li><strong>Placeholder 2:</strong> XXX</li>
+		<li><strong>Placeholder 3:</strong> XXX</li>
+        </ul>
+    </section>
+	
+	<h2 class="subtitle">Section</h2>
+    <section class="definitions">
+		TODO put text here
+    </section>
+	
+	<h2 class="subtitle">Section</h2>
+    <section class="methodology">
+		TODO
+    </section>
+
+	<h2 class="subtitle">How to cite</h2>
+
+	<div class="card">
+	<h3 class="card-header">bibliography</h3>
+	<div class="card-block">
+	<p style="text-indent: -3em; margin-left: 3em;" class="card-text clickselect">
+	Aaron Mueller, Atticus Geiger, Sarah Wiegreffe, Dana Arad, Iván Arcuschin, Adam Belfki, Yik Siu Chan, Jaden Fiotto-Kaufman, Tal Haklay, Michael Hanna, Jing Huang, Rohan Gupta, Yaniv Nikankin, Hadas Orgad, Nikhil Prakash, Anja Reusch, Aruna Sankaranarayanan, Shun Shao, Alessandro Stolfo, Martin Tutek, Amir Zur, David Bau, Yonatan Belinkov, “<em>MIB: A Mechanistic Interpretability Benchmark</em>”.
+	</p>
+	</div>
+	<h3 class="card-header">bibtex</h3>
+	<div class="card-block">
+	<pre class="card-text clickselect">
+	TODO
+	</pre>
+	</div>
+	</div>
+	<p></p>
+</div>
+
+
+<footer>
+    <p>Created by Hadas Orgad | Technion | 2024</p>
+</footer>
+
+</body>
+</html>
