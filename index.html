@@ -44,7 +44,7 @@
         }
 
         header {
-            background-color: #6aa2bb;
+            background-color: #1e1e1e;
             color: #fff;
             padding: 60px 0;
             text-align: center;
@@ -83,11 +83,11 @@
 		
 		header address a {
 			font-size: 20px;
-			color: #4a5685;
+			color: #c78752;
 		}
 		
 		header address {
-			color: #337ab7
+			color: #419F6C
 		}
 		
 		header address institute {
@@ -140,7 +140,7 @@
                 flex: 1 1 100%;
             }
 
-            .key-contributions, .methodology, .definitions {
+            .key-contributions, .materials, .causalvariable .circuit .motivation {
                 padding: 15px;
             }
 
@@ -158,7 +158,7 @@
                 font-size: 14px;
             }
 
-            .key-contributions, .methodology, .definitions {
+            .key-contributions, .materials, .causalvariable .circuit .motivation {
                 padding: 10px;
             }
 
@@ -195,12 +195,12 @@
 		
 		.subtitle {
 		    font-size: 28px;
-            border-left: 5px solid #4a9aac;
+            border-left: 5px solid #1e1e1e;
             padding-left: 10px;
             color: #333;
 		}
 
-        .key-contributions, .methodology {
+        .key-contributions, .materials, .causalvariable {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
@@ -208,7 +208,7 @@
 			font-size: 18px;
         }
 		
-		.definitions {
+		.circuit, .motivation {
             background-color: #ededed;
             padding: 20px;
             border-radius: 8px;
@@ -216,12 +216,12 @@
 			font-size: 18px;
         }
 
-        .key-contributions h3, .methodology h3 .definitions h3 {
+        .key-contributions h3, .materials h3 .causalvariable h3 .circuit h3 .motivation h3 {
             font-size: 24px;
             color: #444;
         }
 
-        .key-contributions ul, .methodology ul .definitions ul {
+        .key-contributions ul, .materials ul .causalvariable ul .circuit ul .motivation ul {
             margin-left: 0px;
 			font-size: 18px;
         }
@@ -275,16 +275,16 @@
 <body>
 
 <header>
-    <h1>MIB: A Mechanistic Interpretability Benchmark</h1>
+    <h1><strong>MIB</strong>: A <strong>M</strong>echanistic <strong>I</strong>nterpretability <strong>B</strong>enchmark</h1>
 	<address>
-	<a href="https://aaronmueller.github.io/" target="_blank">Aaron Mueller</a>,
-	<a href="https://atticusg.github.io/" target="_blank">Atticus Geiger</a>,
-	<a href="https://sarahwie.github.io/" target="_blank">Sarah Wiegreffe</a>,
+	<a href="https://aaronmueller.github.io/" target="_blank">Aaron Mueller</a>*,
+	<a href="https://atticusg.github.io/" target="_blank">Atticus Geiger</a>*,
+	<a href="https://sarahwie.github.io/" target="_blank">Sarah Wiegreffe</a>*,
 	<a href="https://il.linkedin.com/in/dana-arad" target="_blank">Dana Arad</a>,
 	<a href="https://iarcuschin.com/" target="_blank">Iván Arcuschin</a>,
 	<a href="https://x.com/adambelfki" target="_blank">Adam Belfki</a>,
 	<a href="https://yiksiu-chan.github.io/" target="_blank">Yik Siu Chan</a>,
-	<a href="https://github.com/JadenFiotto-Kaufman" target="_blank">Jaden Fiotto-Kaufman</a>,<br>
+	<a href="https://github.com/JadenFiotto-Kaufman" target="_blank">Jaden Fiotto-Kaufman</a>,
 	<a href="https://x.com/tal_haklay" target="_blank">Tal Haklay</a>,
 	<a href="https://hannamw.github.io/" target="_blank">Michael Hanna</a>,
 	<a href="https://scholar.google.com/citations?hl=en&user=zM_wp_MAAAAJ&view_op=list_works&sortby=pubdate" target="_blank">Jing Huang</a>,
@@ -292,19 +292,20 @@
 	<a href="https://yaniv.nikankin.com/" target="_blank">Yaniv Nikankin</a>,
 	<a href="https://orgadhadas.github.io/" target="_blank">Hadas Orgad</a>,
 	<a href="https://nix07.github.io/" target="_blank">Nikhil Prakash</a>,
-	<a href="https://anja.re/" target="_blank">Anja Reusch</a>,<br>
+	<a href="https://anja.re/" target="_blank">Anja Reusch</a>
 	<a href="https://x.com/arunasank?lang=en" target="_blank">Aruna Sankaranarayanan</a>,
 	<a href="https://x.com/shunshao6" target="_blank">Shun Shao</a>,
 	<a href="https://alestolfo.github.io/" target="_blank">Alessandro Stolfo</a>,
 	<a href="https://mttk.github.io/" target="_blank">Martin Tutek</a>,
 	<a href="https://amirzur.github.io/" target="_blank">Amir Zur</a>,
 	<a href="https://baulab.info/" target="_blank">David Bau</a>,
-	<a href="https://belinkov.com/" target="_blank">Yonatan Belinkov</a>,
+	<a href="https://belinkov.com/" target="_blank">Yonatan Belinkov</a>
 	 <br>
 	</address>
-	<a href="https://arxiv.org/abs/2410.02707" target="_blank" class="btn" style="color: #fff; background-color: #198754; border-color: #136e44;"><i class="ai ai-arxiv"></i> ArXiv</a>
-    <a href="https://orgadhadas.github.io/publications/llms_know/paper.pdf" target="_blank" class="btn" style="color: #fff; background-color: #dc3545; border-color: #b72d3a;"><i class="far fa-file-pdf"></i> PDF</a>
-    <a href="https://github.com/technion-cs-nlp/LLMsKnow" target="_blank" class="btn" style="color: #fff; background-color: #212529; border-color: #212529;"><i class="fab fa-github"></i> Code</a>
+	<a href="https://arxiv.org/abs/2410.02707" target="_blank" class="btn" style="color: #fff; background-color: #c78752; border-color: #6d3b12;"><i class="ai ai-arxiv"></i> Paper</a>
+	<a href="https://arxiv.org/abs/2410.02707" target="_blank" class="btn" style="color: #000; background-color: #fff; border-color: #c1c1c1;"><i class="fas fa-database"></i> Data</a>
+    <a href="https://github.com/aaronmueller/MIB" target="_blank" class="btn" style="color: #fff; background-color: #3a4149; border-color: #000000;"><i class="fab fa-github"></i> Code</a>
+	<a href="https://huggingface.co/spaces/mib-bench/leaderboard" target="_blank" class="btn" style="color: #fff; background-color: #419F6C; border-color: #204e35;"><i class="far fa-chart-bar"></i> Leaderboard</a>
 </header>
 
 
@@ -317,28 +318,142 @@
 	<h2 class="subtitle">Abstract</h2>
     <section>
         <p>
-Progress in mechanistic interpretability has been rapid, but there exist few standards for comparing methods. How can we know whether new methods achieve real improvements? In pursuit of meaningful and lasting evaluation standards, we propose MIB, a Mechanistic Interpretability Benchmark with two tracks spanning four tasks and five models. <mark>MIB favors methods that precisely and concisely recover relevant causal pathways or specific causal variables in neural language models.</mark> The circuit localization track compares methods that locate the model components—and connections between themmost important for performing a task (e.g., attribution patching or information flow routes). pares methods that featurize a hidden vector (e.g., sparse autoencoders or distributed alignment search) and locate mediators of a causal variable relevant to the task. Using MIB, we find that attribution and mask optimization methods perform best on circuit localization. We also find that supervised methods for causal variable localization outperform unsupervised methods, and both outperform the simplest baseline. These findings illustrate that MIB enables meaningful comparisons of MI methods, and increases our confidence that there has been real progress in the field.
+Progress in mechanistic interpretability has been rapid, but there exist few standards for comparing methods. How can we know whether new methods achieve real improvements? In pursuit of meaningful and lasting evaluation standards, we propose <strong>MIB</strong>, a <strong>M</strong>echanistic <strong>I</strong>nterpretability <strong>B</strong>enchmark with two tracks spanning four tasks and five models. <mark><strong>MIB</strong> favors methods that precisely and concisely recover relevant causal pathways or specific causal variables in neural language models.</mark> The circuit localization track compares methods that locate the model components—and connections between themmost important for performing a task (e.g., attribution patching or information flow routes). pares methods that featurize a hidden vector (e.g., sparse autoencoders or distributed alignment search) and locate mediators of a causal variable relevant to the task. Using <strong>MIB</strong>, we find that attribution and mask optimization methods perform best on circuit localization. We also find that supervised methods for causal variable localization outperform unsupervised methods, and both outperform the simplest baseline. These findings illustrate that <strong>MIB</strong> enables meaningful comparisons of MI methods, and increases our confidence that there has been real progress in the field.
         </p>
     </section>
 
 	<h2 class="subtitle">Key Contributions</h2>
     <section class="key-contributions">
         <ul>
-		<li><strong>Placeholder 1:</strong> XXX</li>
-		<li><strong>Placeholder 2:</strong> XXX</li>
-		<li><strong>Placeholder 3:</strong> XXX</li>
+		<li><strong>New metrics:</strong> Two integrated faithfulness metrics for evaluating circuit discovery methods</li>
+		<li><strong>New model:</strong> A model with a ground-truth circuit</li>
+		<li><strong>Standard datasets and counterfactuals:</strong> Tasks and causal variables of varying difficulties and required reasoning types</li>
+		<li><strong>Novel scientific insights:</strong> Edge-level circuits outperform node-level; attribution and mask learning methods are best for circuit discovery; DAS outperforms mask learning and SAEs</li>
         </ul>
     </section>
 	
-	<h2 class="subtitle">Section</h2>
-    <section class="definitions">
-		TODO put text here
+	<h2 class="subtitle">Motivation</h2>
+    <section class="motivation">
+		Mechanistic interpretability (MI) methods allow us to understand why language models (LMs) behave the way they do. MI methods
+		have been proliferating quickly, but it's difficult to compare the efficacy of MI methods. How can we know whether true methods
+		are producing real advancements over prior work? We propose <strong>MIB</strong> as a stable standard.
+
+		<h3>Types of MI Methods</h3>
+		We see most MI methods as doing either <em>localization</em> or <em>featurization</em> (or both). We split these two functions into
+		two tracks: the <strong>circuit localization track</strong>, and the <strong>causal variable track</strong>.
     </section>
 	
-	<h2 class="subtitle">Section</h2>
-    <section class="methodology">
-		TODO
+	<h2 class="subtitle">Materials</h2>
+    <section class="materials">
+		<h3>Data</h3>
+		Both tracks evaluate across four tasks. These are selected to represent various reasoning types, difficulty levels, and answer formats.
+		<ul>
+			<li>Indirect Object Identification (IOI)</li>
+			<li>Multiple-choice Question Answering (MCQA)</li>
+			<li>Arithmetic</li>
+			<li>AI2 Reasoning Challenge (ARC)</li>
+		</ul>
+
+		Two of these tasks (IOI and Arithmetic) were chosen because they have been extensively studied. The others (MCQA and ARC) were chosen because
+		they have not.
+
+		<h3>Models</h3>
+		We include models of diverse capability levels and sizes:
+		<ul>
+			<li>GPT-2 Small</li>
+			<li>Qwen-2.5 (0.5B)</li>
+			<li>Gemma-2 (2B)</li>
+			<li>Llama-3.1 (8B)</li>
+		</ul>
     </section>
+
+	<h2 class="subtitle">Circuit Localization Track</h2>
+	<section class="circuit">
+		<figure>
+			<img class="float-figure" src="img/circuit_track.png" class="img-inline">
+		</figure>
+		Given a task, a <strong>circuit</strong> is the subset of the computation graph that performs the task.
+
+		<h3>Metrics</h3>
+		Past circuit discovery work often uses <strong>faithfulness</strong>. This is good for measuring the quality of a single circuit, but how do we measure the quality
+		of a circuit discovery method?
+		<br><br>
+		Furthermore, people often mean one of two things by this: (i) the subgraph that is responsible for performing the task well, or (ii) the
+		smallest subgraph that replicates the model's behavior (including its failures).
+		<br><br>
+		Thus, we propose two new metrics: the <strong>integrated circuit performance ratio</strong> (CPR; higher is better), and the <strong>integrated circuit-model difference</strong> (CMD; 0 is best).
+		CPR is basically the area under the faithfulness curve at many circuit sizes. CMD is the area between the faithfulness curve and 1, where 1 indicates that the circuit and model
+		have the exact same task behavior (with respect to what is being measured).
+		<figure>
+			<img class="float-figure" src="img/f_curves.png" class="img-inline">
+			<figcaption>Illustration of CPR (area under the faithfulness curve) and CMD (area between the faithfulness curve and 1).</figcaption>
+		</figure>
+		<br><br>
+		An issue with faithfulness is that it's not clear what the lower or upper bounds are. Thus, we include a fifth model for this track: an <em>InterpBench</em> model. This is a model
+		that we train to contain a known ground-truth circuit. Because we know what the edges are, we can compute the AUROC over the edges at many circuit sizes.
+		
+		<h3>Baselines</h3>
+		We evaluate a variety of methods, including:
+		<ul>
+			<li>Activation patching</li>
+			<li>Gradient attribution methods</li>
+			<li>Mask learning methods</li>
+			<li>Information flow routes</li>
+			<li>Edge-level and node-level circuit discovery</li>
+		</ul>
+
+		<h3>Results</h3>
+		<figure>
+			<img class="float-figure" src="img/circuit_results.png" class="img-inline">
+			<figcaption>CMD scores (closer to 0 is better), and AUROC scores (for InterpBench only; higher is better).</figcaption>
+		</figure>
+		<img src="img/arrow.gif" class="img-inline" style="height:50px"> Attribution patching with integrated gradients (*AP-IG) outperforms attribution patching (*AP), and most other
+		methods.<br>
+		<img src="img/arrow.gif" class="img-inline" style="height:50px"> Edge-level circuits (E*) outperform node-level circuits (A*).<br>
+		<img src="img/arrow.gif" class="img-inline" style="height:50px"> Patching with activations from counterfactual inputs (CF) outperforms
+		other common patching methods.<br>
+		<img src="img/arrow.gif" class="img-inline" style="height:50px"> UGS, a mask-learning method, performs well.<br>
+	</section>
+
+	<h2 class="subtitle">Causal Variable Localization Track</h2>
+	<section class="causalvariable">
+		<figure>
+			<img class="float-figure" src="img/causalvariable_track.png" class="img-inline">
+		</figure>
+		In this track, the goal is to align model representations with specific known causal variables.
+		<h3>Metrics</h3>
+		We want to evaluate the quality of a <strong>featurizer</strong>, a transformation of the activations that
+		makes it easier to isolate the desired causal variable. For this, we typically use <strong>interchange intervention accuracy</strong>.
+
+		<figure>
+			<img class="float-figure" src="img/causalvariable_alignment.png" class="img-inline">
+			<figcaption>Example of causal variable alignment. In the arithmetic task, one could hypothesize a carry-the-one variable.
+				        We align this variable with model activations (featurized by F), and measure whether interventions to these features
+					    result in the expected change in model behavior.</figcaption>
+		</figure>
+
+		<h3>Baselines</h3>
+		We evaluate a mixture of supervised and unsupervised, as well as parametric and non-parametric, methods.
+		<ul>
+			<li>Distributed alignment search (DAS)</li>
+			<li>Differentiable binary masks (DBM)</li>
+			<li>Sparse autoencoders (SAE)</li>
+			<li>Principal component analysis (PCA)</li>
+		</ul>
+		As a naive baseline, we compare to no featurizer (i.e., the full untransformed vector).
+
+		<h3>Results</h3>
+		<figure>
+			<img class="float-figure" src="img/causalvariable_results.png" class="img-inline">
+			<figcaption>Interchange intervention accuracies (higher is better). For IOI, we instead measure the error between a hypothesized variable value and
+				the model's output logits, so lower is better.
+			</figcaption>
+		</figure>
+		<img src="img/arrow.gif" class="img-inline" style="height:50px"> DAS performs best.<br>
+		<img src="img/arrow.gif" class="img-inline" style="height:50px"> SAEs are high-variance: sometimes they approach the performance of the best methods, but sometimes approach that of the worst.<br>
+		<img src="img/arrow.gif" class="img-inline" style="height:50px"> PCA performs poorly.<br>
+		<img src="img/arrow.gif" class="img-inline" style="height:50px"> In general, non-basis-aligned features perform better than basis-aligned features.<br>
+	</section>
 
 	<h2 class="subtitle">How to cite</h2>
 
@@ -346,13 +461,19 @@ Progress in mechanistic interpretability has been rapid, but there exist few sta
 	<h3 class="card-header">bibliography</h3>
 	<div class="card-block">
 	<p style="text-indent: -3em; margin-left: 3em;" class="card-text clickselect">
-	Aaron Mueller, Atticus Geiger, Sarah Wiegreffe, Dana Arad, Iván Arcuschin, Adam Belfki, Yik Siu Chan, Jaden Fiotto-Kaufman, Tal Haklay, Michael Hanna, Jing Huang, Rohan Gupta, Yaniv Nikankin, Hadas Orgad, Nikhil Prakash, Anja Reusch, Aruna Sankaranarayanan, Shun Shao, Alessandro Stolfo, Martin Tutek, Amir Zur, David Bau, Yonatan Belinkov, “<em>MIB: A Mechanistic Interpretability Benchmark</em>”.
+	Aaron Mueller*, Atticus Geiger*, Sarah Wiegreffe*, Dana Arad, Iván Arcuschin, Adam Belfki, Yik Siu Chan, Jaden Fiotto-Kaufman, Tal Haklay, Michael Hanna, Jing Huang, Rohan Gupta, Yaniv Nikankin, Hadas Orgad, Nikhil Prakash, Anja Reusch, Aruna Sankaranarayanan, Shun Shao, Alessandro Stolfo, Martin Tutek, Amir Zur, David Bau, Yonatan Belinkov, “<em>MIB: A Mechanistic Interpretability Benchmark</em>”.
 	</p>
 	</div>
 	<h3 class="card-header">bibtex</h3>
 	<div class="card-block">
 	<pre class="card-text clickselect">
-	TODO
+@article{mib-2025,
+	title = {{MIB}: A Mechanistic Interpretability Benchmark},
+	author = {Aaron Mueller and Atticus Geiger and Sarah Wiegreffe and Dana Arad and Iv{\'a}n Arcuschin and Adam Belfki and Yik Siu Chan and Jaden Fiotto-Kaufman and Tal Haklay and Michael Hanna and Jing Huang and Rohan Gupta and Yaniv Nikankin and Hadas Orgad and Nikhil Prakash and Anja Reusch and Aruna Sankaranarayanan and Shun Shao and Alessandro Stolfo and Martin Tutek and Amir Zur and David Bau and Yonatan Belinkov},
+	year = {2025},
+	note = {To appear},
+	journal = {arXiv preprint}
+}
 	</pre>
 	</div>
 	</div>
@@ -361,7 +482,7 @@ Progress in mechanistic interpretability has been rapid, but there exist few sta
 
 
 <footer>
-    <p>Created by Hadas Orgad | Technion | 2024</p>
+    <p>Created by Aaron Mueller and Hadas Orgad | 2025</p>
 </footer>
 
 </body>
