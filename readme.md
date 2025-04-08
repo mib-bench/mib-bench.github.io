@@ -1,3 +1,3 @@
-# LLMs Know More Than They Show: On the Intrinsic Representation of LLM Hallucinations
+# MIB: A Mechanistic Interpretability Benchmark
 
-This is the repository for the paper's [website](mib-bench.github.io).
+This is the repository for MIB's [website](mib-bench.github.io).
