@@ -88,6 +88,9 @@
 		
 		header address {
 			color: #419F6C;
+			text-align: center;
+			margin: auto;
+  			max-width: 1100px;
 		}
 		
 		header address institute {
@@ -297,21 +300,22 @@
 	<a href="https://x.com/shunshao6" target="_blank">Shun Shao</a><sup>9</sup>,
 	<a href="https://alestolfo.github.io/" target="_blank">Alessandro Stolfo</a><sup>10</sup>,
 	<a href="https://mttk.github.io/" target="_blank">Martin Tutek</a><sup>2</sup>,
-	<a href="https://amirzur.github.io/" target="_blank">Amir Zur</a><sup>6</sup>,
+	<a href="https://amirzur.github.io/" target="_blank">Amir Zur</a><sup>3</sup>,
 	<a href="https://baulab.info/" target="_blank">David Bau</a></a><sup>1</sup>,
 	<a href="https://belinkov.com/" target="_blank">Yonatan Belinkov</a><sup>2</sup>
 	 <br>
-	<nobr><sup>1</sup><institute>Northeastern University   </a></institute></nobr>
-	<nobr><sup>2</sup><institute>Technion – IIT</a></institute></nobr>
-	<nobr><sup>3</sup><institute>Pr(Ai)<sup>2</sup>R Group</a></institute></nobr>
-	<nobr><sup>4</sup><institute>AI2</a></institute></nobr>
-	<nobr><sup>5</sup><institute>Independent</a></institute></nobr>
-	<nobr><sup>6</sup><institute>Brown University</a></institute></nobr>
-	<nobr><sup>7</sup><institute>University of Amsterdam</a></institute></nobr>
-	<nobr><sup>8</sup><institute>Massachusetts Institute of Technology</a></institute></nobr>
-	<nobr><sup>9</sup><institute>University of Cambridge</a></institute></nobr>
-	<nobr><sup>10</sup><institute>ETH Zürich</a></institute></nobr>
+	<nobr><sup>1</sup><institute>Northeastern University</a></institute></nobr>&nbsp;&nbsp;&nbsp;
+	<nobr><sup>2</sup><institute>Technion – IIT</a></institute></nobr>&nbsp;&nbsp;&nbsp;
+	<nobr><sup>3</sup><institute>Pr(Ai)<sup>2</sup>R Group</a></institute></nobr>&nbsp;&nbsp;&nbsp;
+	<nobr><sup>4</sup><institute>AI2</a></institute></nobr>&nbsp;&nbsp;&nbsp;
+	<nobr><sup>5</sup><institute>Independent</a></institute></nobr>&nbsp;&nbsp;&nbsp;
+	<nobr><sup>6</sup><institute>Brown University</a></institute></nobr>&nbsp;&nbsp;&nbsp;
+	<nobr><sup>7</sup><institute>University of Amsterdam</a></institute></nobr>&nbsp;&nbsp;&nbsp;
+	<nobr><sup>8</sup><institute>Massachusetts Institute of Technology</a></institute></nobr>&nbsp;&nbsp;&nbsp;
+	<nobr><sup>9</sup><institute>University of Cambridge</a></institute></nobr>&nbsp;&nbsp;&nbsp;
+	<nobr><sup>10</sup><institute>ETH Zürich</a></institute></nobr>&nbsp;&nbsp;&nbsp;
 	</address>
+	<br>
 	<a href="https://arxiv.org/abs/2410.02707" target="_blank" class="btn" style="color: #fff; background-color: #c78752; border-color: #6d3b12;"><i class="ai ai-arxiv"></i> Paper</a>
 	<a href="https://arxiv.org/abs/2410.02707" target="_blank" class="btn" style="color: #000; background-color: #fff; border-color: #c1c1c1;"><i class="fas fa-database"></i> Data</a>
     <a href="https://github.com/aaronmueller/MIB" target="_blank" class="btn" style="color: #fff; background-color: #3a4149; border-color: #000000;"><i class="fab fa-github"></i> Code</a>
@@ -322,7 +326,7 @@
 <div class="container">
 
 	<figure style="padding-top: 50px; padding-bottom:100px">
-		<img src="img/mib_logo.png" class="img-inline" height="300px">
+		<img src="img/mib_logo.png" class="img-inline" height="290px" width="auto">
 	</figure>
 
 	<h2 class="subtitle">Abstract</h2>
@@ -380,7 +384,7 @@ Progress in mechanistic interpretability has been rapid, but there exist few sta
 	<h2 class="subtitle">Circuit Localization Track</h2>
 	<section class="circuit">
 		<figure>
-			<img class="float-figure" src="img/circuit_track.png" class="img-inline">
+			<img src="img/circuit_track.png" class="img-inline" style="width:90%; min-width: 150px; height:auto; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
 		</figure>
 		Given a task, a <strong>circuit</strong> is the subset of the computation graph that performs the task.
 
@@ -395,7 +399,7 @@ Progress in mechanistic interpretability has been rapid, but there exist few sta
 		CPR is basically the area under the faithfulness curve at many circuit sizes. CMD is the area between the faithfulness curve and 1, where 1 indicates that the circuit and model
 		have the exact same task behavior (with respect to what is being measured).
 		<figure>
-			<img class="float-figure" src="img/f_curves.png" class="img-inline">
+			<img src="img/f_curves.png" class="img-inline" style="width:40%; min-width: 150px; height:auto; border-radius:5px 5px 5px 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
 			<figcaption>Illustration of CPR (area under the faithfulness curve) and CMD (area between the faithfulness curve and 1).</figcaption>
 		</figure>
 		<br><br>
@@ -414,7 +418,7 @@ Progress in mechanistic interpretability has been rapid, but there exist few sta
 
 		<h3>Results</h3>
 		<figure>
-			<img class="float-figure" src="img/circuit_results.png" class="img-inline">
+			<img src="img/circuit_results.png" class="img-inline" style="width:85%; min-width: 150px; height:auto; border-radius:5px 5px 5px 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
 			<figcaption>CMD scores (closer to 0 is better), and AUROC scores (for InterpBench only; higher is better).</figcaption>
 		</figure>
 		<img src="img/arrow.gif" class="img-inline" style="height:50px"> Attribution patching with integrated gradients (*AP-IG) outperforms attribution patching (*AP), and most other
@@ -428,7 +432,7 @@ Progress in mechanistic interpretability has been rapid, but there exist few sta
 	<h2 class="subtitle">Causal Variable Localization Track</h2>
 	<section class="causalvariable">
 		<figure>
-			<img class="float-figure" src="img/causalvariable_track.png" class="img-inline">
+			<img src="img/causalvariable_track.png" class="img-inline" style="width:90%; min-width: 150px; height:auto; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
 		</figure>
 		In this track, the goal is to align model representations with specific known causal variables.
 		<h3>Metrics</h3>
@@ -436,7 +440,7 @@ Progress in mechanistic interpretability has been rapid, but there exist few sta
 		makes it easier to isolate the desired causal variable. For this, we typically use <strong>interchange intervention accuracy</strong>.
 
 		<figure>
-			<img class="float-figure" src="img/causalvariable_alignment.png" class="img-inline">
+			<img src="img/causalvariable_alignment.png" class="img-inline" style="width:50%; min-width: 150px; height:auto; border-radius:5px 5px 5px 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
 			<figcaption>Example of causal variable alignment. In the arithmetic task, one could hypothesize a carry-the-one variable.
 				        We align this variable with model activations (featurized by F), and measure whether interventions to these features
 					    result in the expected change in model behavior.</figcaption>
@@ -454,7 +458,7 @@ Progress in mechanistic interpretability has been rapid, but there exist few sta
 
 		<h3>Results</h3>
 		<figure>
-			<img class="float-figure" src="img/causalvariable_results.png" class="img-inline">
+			<img src="img/causalvariable_results.png" class="img-inline" style="width:80%; min-width: 150px; height:auto; border-radius:5px 5px 5px 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
 			<figcaption>Interchange intervention accuracies (higher is better). For IOI, we instead measure the error between a hypothesized variable value and
 				the model's output logits, so lower is better.
 			</figcaption>
