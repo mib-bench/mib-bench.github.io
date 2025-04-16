@@ -333,7 +333,13 @@
 	<h2 class="subtitle">Abstract</h2>
     <section>
         <p>
-Progress in mechanistic interpretability has been rapid, but there exist few standards for comparing methods. How can we know whether new methods achieve real improvements? In pursuit of meaningful and lasting evaluation standards, we propose <strong>MIB</strong>, a <strong>M</strong>echanistic <strong>I</strong>nterpretability <strong>B</strong>enchmark with two tracks spanning four tasks and five models. <mark><strong>MIB</strong> favors methods that precisely and concisely recover relevant causal pathways or specific causal variables in neural language models.</mark> The circuit localization track compares methods that locate the model components—and connections between them—that are most important for performing a task (e.g., attribution patching or information flow routes). The causal variable localization track compares methods that featurize a hidden vector (e.g., sparse autoencoders or distributed alignment search) and locate mediators of a causal variable relevant to the task. Using <strong>MIB</strong>, we find that attribution and mask optimization methods perform best on circuit localization. We also find that supervised methods for causal variable localization outperform unsupervised methods, and both outperform the simplest baseline. These findings illustrate that <mark><strong>MIB</strong> enables meaningful comparisons of MI methods, and increases our confidence that there has been real progress in the field</mark>.
+How can we know whether new mechanistic interpretability methods achieve real improvements? 
+In pursuit of meaningful and lasting evaluation standards, 
+we propose <strong>MIB</strong>, a <strong>M</strong>echanistic <strong>I</strong>nterpretability <strong>B</strong>enchmark with two tracks spanning four tasks and five models. <mark><strong>MIB</strong> 
+favors methods that <em>precisely</em> and <em>concisely</em> recover relevant causal pathways or specific causal variables in neural language models.</mark> The <strong>circuit localization track</strong> compares methods that locate the model components—and connections between them—most important for performing a task (e.g., attribution patching or information flow routes).
+The <strong>causal variable localization track</strong> compares methods that featurize a hidden vector, e.g., sparse autoencoders (SAE) or distributed alignment search (DAS), and locate model features for a causal variable relevant to the task.
+Using <strong>MIB</strong>, we find that attribution and mask optimization methods perform best on circuit localization. 
+For causal variable localization, we find that the supervised DAS method performs best, while SAEs features are not better than neurons, i.e., standard dimensions of hidden vectors. These findings illustrate that <mark><strong>MIB</strong> enables meaningful comparisons of MI methods, and increases our confidence that there has been real progress in the field</mark>.
         </p>
     </section>
 
@@ -343,7 +349,7 @@ Progress in mechanistic interpretability has been rapid, but there exist few sta
 		<li><strong>New metrics:</strong> Two integrated faithfulness metrics for evaluating circuit discovery methods</li>
 		<li><strong>New model:</strong> A model with a ground-truth circuit</li>
 		<li><strong>Standard datasets and counterfactuals:</strong> Tasks and causal variables of varying difficulties and required reasoning types</li>
-		<li><strong>Novel scientific insights:</strong> Edge-level circuits outperform node-level; attribution and mask learning methods are best for circuit discovery; DAS outperforms mask learning and SAEs</li>
+		<li><strong>Novel scientific insights:</strong> Edge-level circuits outperform node-level; attribution and mask learning methods are best for circuit discovery; DAS performs well and establishes that there are linear features that realize causal variables, but standard dimensions of hidden vectors are better units of analysis than SAE features.</li>
         </ul>
     </section>
 	
@@ -436,38 +442,39 @@ Progress in mechanistic interpretability has been rapid, but there exist few sta
 			<img src="img/causalvariable_track.png" class="img-inline" style="width:90%; min-width: 150px; height:auto; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
 		</figure>
 		In this track, the goal is to align model representations with specific known causal variables.
+		<h3>Submissions</h3>
+		A submission will align a causal variable in a model that solves the task with features of a hidden vector. For each layer, a submission can provide a hidden vector, a featurizer, and a set of features the variable is aligned to.
+		<figure>
+			<img src="img/causalvariable_submission.png" class="img-inline" style="width:50%; min-width: 150px; height:auto; border-radius:5px 5px 5px 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+			<figcaption>Example of of an alignment that would be provided in a submission. In the arithmetic task, the high-level causal model has a carry-the-one variable that is aligned with features of a hidden vector.</figcaption>
+		</figure>
 		<h3>Metrics</h3>
 		We want to evaluate the quality of a <strong>featurizer</strong>, a transformation of the activations that
 		makes it easier to isolate the desired causal variable. For this, we typically use <strong>interchange intervention accuracy</strong>.
-
 		<figure>
 			<img src="img/causalvariable_alignment.png" class="img-inline" style="width:50%; min-width: 150px; height:auto; border-radius:5px 5px 5px 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
-			<figcaption>Example of causal variable alignment. In the arithmetic task, one could hypothesize a carry-the-one variable.
-				        We align this variable with model activations (featurized by F), and measure whether interventions to these features
-					    result in the expected change in model behavior.</figcaption>
+			<figcaption> Interchange interventions are used to evaluate submissions. The causal model and language model are both run on a <strong>base input</strong> and then a variable in the causal model and aligned features in the language model are both set to the values they would take if a <em>counterfactual input</em> were used instead. The output of the causal model and language model are compared, and the more similar the inputs the more accurately the causal model abstracts the language model.</figcaption>
+			</figcaption>
 		</figure>
 
 		<h3>Baselines</h3>
 		We evaluate a mixture of supervised and unsupervised, as well as parametric and non-parametric, methods.
 		<ul>
 			<li>Distributed alignment search (DAS)</li>
-			<li>Differentiable binary masks (DBM)</li>
-			<li>Sparse autoencoders (SAE)</li>
-			<li>Principal component analysis (PCA)</li>
+			<li>Differentiable binary masks (DBM) on standard dimensions of hidden vectors</li>
+			<li>DBM on Sparse autoencoder (SAE) features</li>
+			<li>DBM on Principal component analysis (PCA) features, i.e., principal components</li>
 		</ul>
 		As a naive baseline, we compare to no featurizer (i.e., the full untransformed vector).
 
 		<h3>Results</h3>
 		<figure>
 			<img src="img/causalvariable_results.png" class="img-inline" style="width:80%; min-width: 150px; height:auto; border-radius:5px 5px 5px 5px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
-			<figcaption>Interchange intervention accuracies (higher is better). For IOI, we instead measure the error between a hypothesized variable value and
-				the model's output logits, so lower is better.
-			</figcaption>
 		</figure>
-		<img src="img/arrow.gif" class="img-inline" style="height:50px"> DAS performs best.<br>
+		<img src="img/arrow.gif" class="img-inline" style="height:50px"> The supervised features from DAS generally performs best.<br>
+		<img src="img/arrow.gif" class="img-inline" style="height:50px"> Learning masks over basis-aligned dimensions of hidden vectors and principal components are also strong methods.<br>
+		<img src="img/arrow.gif" class="img-inline" style="height:50px"> SAEs fail to provide a better unit of analysis than basis-aligned dimensions, except for the RAVEL task for the continent causal variable in the Gemma-2 model.<br>
 		<img src="img/arrow.gif" class="img-inline" style="height:50px"> SAEs are high-variance: sometimes they approach the performance of the best methods, but sometimes approach that of the worst.<br>
-		<img src="img/arrow.gif" class="img-inline" style="height:50px"> PCA performs poorly.<br>
-		<img src="img/arrow.gif" class="img-inline" style="height:50px"> In general, non-basis-aligned features perform better than basis-aligned features.<br>
 	</section>
 
 	<h2 class="subtitle">How to cite</h2>
